@@ -1,7 +1,9 @@
 \documentclass{article}
 \usepackage[utf8]{inputenc}
 \usepackage[english]{babel}
- 
+\usepackage{mathtools}
+\usepackage{graphicx}
+
 \usepackage{multicol}
  
 \addtolength{\oddsidemargin}{-1.5in}
@@ -11,15 +13,12 @@
 \addtolength{\topmargin}{-.875in}
 \addtolength{\textheight}{1.75in} 
  
+ 
 \begin{document}
 \begin{multicols}{3}
 [
-\section{First Section}
-All human things are subject to decay. And when fate summons, Monarchs must obey.
-]
-
-asdf\\
-
+\section{NE101 Mid Term 2}
+NE101 Equation Sheet, Joshua Howland, 11/3/2014]
 
 Constants:\\
 $\mu_{0} = 4 \pi \times 10 ^{-7} NA^{-2}$ or $Hm^{-1} $\\
@@ -28,16 +27,34 @@ $eV = 1.6022\times 10 ^{-16} J$\\
 mass hydrogen $ = 1.00794u  $\\
 $1u = 1.66053 \times 10^{-27} kg $\\
 
-Shell model
-Intermediate Form:
-Intermediate form with spin orbit:\\
+Shell model:\\
+Intermediate Form: (unlikely on exam):\\
+Magic Numbers: 2,8,20,40,58,92,112 \\
+
+Intermediate form with spin orbit (Extreme independent shell model):\\
 $1s_{1/2}^{2} 1p_{3/2}^{4} 1p_{1/2}^{2} 1d_{5/2}^{6} 2s_{1/2}^{2} 1d_{3/2}^{4} 1f_{7/2}^{8} 2p_{3/2}^{4} $\\
 $1f_{5/2}^{6} 2p_{1/2}^{2} 1g_{9/2}^{10} 1g_{7/2}^{8} 2d_{5/2}^{6} 2d_{3/2}^{4}$\\
-Continue.. found on p 123\\
-(s-0, p-1, d-2, f-3, g-4, h-5)\\
+Magic Numbers: 2, 8, 20, 28, 50, 82, 126, 184\\
+Notation: 1(s-0, p-1, d-2, f-3, g-4, h-5)\\
 
+Example: Give the expected shell-model spin and parity assignments for the ground states of: (a) $ \prescript{7}{}{Li} $: 3p, 4n: 1 unpaired proton.  Proton shells are: $1s_{1/2}^{2}1p_{3/2}^{1}$.  $\ell = 1 (p=1)$, $\pi = -$, $J_{\pi} = \frac{3}{2}^{-}$ (b) $ \prescript{11}{}{B} $: 5p, 6n: 1 unpaired proton.  Proton shells are: $1s_{1/2}^{2}1p_{3/2}^{3}$.  $\ell = 1 (p=1)$, $\pi = -$, $J_{\pi} = \frac{3}{2}^{-}$ (c) $ \prescript{15}{}{B} $: 6p, 9n: 1 unpaired neutron.  Neutron shells are: $1s_{1/2}^{2}1p_{3/2}^{4}1p_{1/2}^{2}1d_{5/2}^{1}$.  $\ell = 2(d=2)$, $\pi = +$, $J_{\pi} = \frac{5}{2}^{+}$ Note: $\prescript{15}{}{C}$ prediction wrong, observed value is $\frac{1}{2}^{+}$\\
+For odd-odd nuclei: $\vec{I} = \vec{j}_{p} + \vec{j}_{n}$\\
+In ground state, $\vec{s}_{p}$ and $\vec{s}_{n}$ are parallel\\
+$j_{p} = \ell_{p} + s_{p}$ and $j_{n} = \ell_{n} + s_{n}$\\
+Note: $\ell$ and $s$ not always parallel!\\
+To calculate $J_{\pi}$, match $\ell$ to correct orbital for p and n, with spins parallel and add parities!\\
 
-xxx
+Example: Calculate $I^{\pi}$ assignments of: (a) $ \prescript{26}{}{Na} $: 11p, 15n.  p: $1d_{5/2}^{3}$, $\ell = 2$, $2 + \frac{1}{2} = \frac{5}{2}$. n: $2s_{1/2}^{1}$, $\ell = 0$, $0 + \frac{1}{2} = \frac{1}{2	}$.  Total $J^{\pi} = 3^{+}$ (b)  $ \prescript{28}{}{Na} $: 11p, 17n.  p: $1d_{5/2}^{3}$, $\ell = 2$, $2 + \frac{1}{2} = \frac{5}{2}$. n: $1d_{3/2}^{1}$, $\ell = 2$, $-2 + \frac{1}{2} = |-\frac{1}{2}|$.  Total $J^{\pi} = 1^{+}$ \\
+Shell model predicts that even-even nuclei will have a spin of $0^{+}$
+
+Unit of EM energy called photon.  "Quantum" of vibrational energy called phonon\\
+\includegraphics[width=4cm]{vibrations.jpg}\\
+Vibrational model best for even-even nuclei with A<150?(methinks)\\
+Energy of vibration: $E = hv$, v = frequency in $\frac{vibrations}{sec}$
+Magnetic moments for first $2^{+}$ states predicted to be $2(\frac{Z}{A})$ and $\frac{E(2^{+})}{E(4^{+})}$ is predicted to $=2$ \\
+Example:  Compute vibrational frequency associated with typical quadrupole vibrations, then compare typical lifetimes of $2^{+}$ excited states in vibrational nuclei to their vibrational frequency:  $\prescript{120}{}{Te}$ is a good choice (even-even, A<150), low lying excited state at $2^{+}$.  $E = hv$, $v = \frac{E}{h} = \frac{0.5604Mev}{4.135\times10^{-21}\frac{Mev}{s}} = 1.355\times10^{20}\frac{1}{sec}$.  T is much shorter than half life, so vibrates many times before decaying. $<\alpha>$ goes to 0, so we cant observe anything based on it, however $<\alpha^{2}>$ does not!
+
+Nuclear Rotations:  Can only be observed in nuclei with non-spherical equilibrium shapes
 
 Hello, here is some text without a meaning.  This text should show what 
 a printed text wjo, here is some text without a meaning.  This text should show 
