@@ -25,12 +25,20 @@ $\epsilon = 8.854187 \times 10 ^{-12} \frac{F}{m}$\\
 $eV = 1.6022\times 10 ^{-16} J$\\
 mass hydrogen $ = 1.00794u  $\\
 $1u = 1.66053 \times 10^{-27} kg $\\
-
+Charge $e^{-}$: $1.6022 \times 10^{-19}$ C\\
+1 u $= 1.6605 \times 10^{-27}$ kg
+$10^{6}(mega)$;$10^{3}(kilo)$;$10^{-3}(mili)$;
+$10^{-6}(micro)$;$10^{-9}(nano)$;$10^{-12}(pico)$
 General Notes:\\
+$E = \frac{hc}{\lambda}$\\
 $\nu_{i}^{*}$ is usually around $10^{5}$\\
 Sanity check: $v_{sound}<\nu_{i}^{*}<c$\\
 $\omega_{ci}\tau_{i} \approx 10^{6}$
 $n\omega$ in plasma formulary in cgs $(cm^{-3}s)$, and Temperatures in eV\\
+$\frac{m_{i}}{m_{p}} = 2.5$ for DT Plasma\\
+
+Hydrogen-Like Ions:\\
+$E_{\inf}^{Z-1} = 13.6Z^2[eV]$, near-stripped when $T_{e} >= \frac{1}{3}E_{\inf}^{Z-1}$\\
 
 Tokamak Safety Factor:\\
 $q = \frac{r}{R}\frac{B_{t}}{B_{p}}$\\
@@ -45,6 +53,29 @@ $<p> = \frac{B_{\theta}(a)^{2}}{2\mu_{0}}$\\
 
 Plasma Drifts:\\
 ExB Drift: $v_{drift} = \frac{\vec{E}\times\vec{B}}{B^{2}} = \frac{\vec{F}\times\vec{B}}{qB^{2}}$\\
+Troyon Beta Limit: $\beta_{max}(\%) = \beta_{N}\frac{I}{aB}$\\
+Fusion power density scales with $n^{2}$:\\
+$p_{f} = \frac{n^{2}}{4}<\sigma v> E_{f}$\\
+$c_{s} = (\frac{ZT_{e} + \gamma}T_{i}{m_{i}})^{1/2}$\\
+$v_{A} = \frac{B}{\sqrt{\mu_{0}\rho}}$, $\frac{c_{s}}{v_{A}} = \sqrt{2\beta}$.  In most plasmas, Alfven wave much faster than sound wave
+
+Tokamak Stability Diagram (Wesson)
+\includegraphics[width=5cm]{images/Tokamak_Stability_Diagram.png}\\
+
+
+
+Alfven velocity: low frequency (compared to the ion cyclotron frequency) travelling oscillation of the ions and the magnetic field.  $v_{A} = B / (4 \pi n_{i} m_{i} ) ^{1/2}$.  Note $n_{i}m_{i} = \rho$\\
+
+Lorentz Force Law: $\vec{F} = q(\vec{v}\times\vec{B} + \vec{E})$.\\  Ex: derive e and ion cyclotron frequencies from LFL: $\vec{E} \rightarrow 0$, $qvB = m\frac{v^{2}}{r}$.  $[\frac{v}{r} = \omega]$. $\frac{qB}{m} = \omega$. $[2\pi f = \omega]$. $f = \frac{qB}{2\pi m}$
+
+Wave Stuff!\\
+Propagation: R and L cutoffs:\\
+$\omega_{R} = \frac{1}{2} (\sqrt{\omega_{ce}^{2} + 4 \omega_{pe}^{2}} + \omega_{ce})$\\
+$\omega_{L} = \frac{1}{2} (\sqrt{\omega_{ce}^{2} + 4 \omega_{pe}^{2}} - \omega_{ce})$\\
+ Upper hybrid resonance: Limit $\omega >> \omega_{ci}, \omega_{pi}$.  In this case, condition $\epsilon_{\perp} = 0$ yields:
+ $\omega^{2} = \omega_{ce}^{2} + \omega_{pe}^{2}$\\
+ Lower hybrid resonance: Limit $\omega << \omega_{ce}$.  In this case, condition $\epsilon_{\perp} = 0$ yields:
+$\omega^{2} \approx \omega_{ci}^{2} + \frac{\omega_{pi}^{2}}{1 + \frac{\omega_{pe}^{2}}{\omega_{ce}^{2}}}$.  Say $\omega_{pe} / \omega_{ce} << 1$, underdense regime, dispersion relation becomes: $\omega^{2} \approx \omega_{ci}^{2} + \omega_{pi}^{2}$.  In case that $\omega_{pe} / \omega_{ce} >> 1$, which is known as the overdense regime, dispersion relation becomes: $\omega^{2} \approx \omega_{ce}^{2} \frac{m_{e}}{m_{i}} \approx \omega_{ce} \omega_{ci}$ 
  
 The stokes diagram:\\
 \includegraphics[width=3cm]{images/general_stokes.png}\\
@@ -66,12 +97,15 @@ $\frac{\tau_{i}}{\tau_{e}} \approx \sqrt{2} (\frac{m_{i}}{m_{e}})^{1/2}$
 and so\\ 
 $\frac{k_{||}^{e}}{k_{||}^{i}} \approx (\frac{3.2}{3.9})(\frac{m_{i}}{m_{e}})^{1/2} \frac{1}{\sqrt{2}}$, however:\\
 $\frac{k_{\perp}^{e}}{k_{\perp}^{i}} \approx (\frac{4.7}{2})(\frac{m_{e}}{m_{i}})^{1/2} \frac{1}{\sqrt{2}}$ and the factors $\omega_{ci}\tau_{i}$ and $\omega_{ce}\tau_{e}$ are both very large.  Conclusions: Parallel transport coefficients are much greater than cross-field transport coefficients. Cross-field ion heat conduction dominates over cross-field electron heat conduction.  Parallel electron heat conduction dominates over parallel ion heat conduction.\\
+Characteristic length $L = |\frac{T_{e}}{\nabla T_{e}}|$\\
 
-Add examples from Lecture 15 (around slide 15)?\\
+Example: Parallel heat conduction: plasma at $n_{e} = 10^{20}m^{-3}$ has $1eV/m$ temp gradient at a temp of $15KeV$.  What is electron heat conduction along $\vec{B}$?  $k_{||}^{e} = 3.2\frac{nT_{e}\tau_{e}}{m_{e}}$.  $\tau_{e} = \frac{3.44 \times 10^{5}T_{e}[eV]^{3/2}}{ln(\triangle) n_{e}[cm^{-3}]} = \frac{2.0\times 10^{4} T_{e}[eV]^{3/2}}{n_{e}[cm^{-3}]} = \frac{2\times 10^{4} (15000)^{3/2}}{10^{14}} = 3.67\times 10^{-4} s$.  Now, $k_{||}^{e} = 3.2\frac{nT_{e}\tau_{e}}{m_{e}} = 3.2\frac{10^{20}(15000\times 1.6 \times 10^{-19}) 3.67 \times 10^{-4}}{9.11\times 10^{-31}} = 3.10\times 10^{32} m^{-1}s^{-1}$.  $\nabla T_{e} = 1.6\times 10^{-19} J m^{-1}$ so that $k_{||}^{e}\nabla T_{e} = 3.10 \times 10^{32} 1.6 \times 10^{-19} = 4.96 \times 10^{13} W m^{-2}$.\\
+Example: Interspecies heating: D+ plasma at $n_{e} = 10^{20} m^{-3}$ with e temp 15Kev and i temp 20Kev.  What is volumetric rate of electron heating?  Note that $\tau_{e} = 3.67\times 10^{-4}s$ as before.  Then $Q_{e} = 3\frac{m_{e}}{m_{i}}\frac{n(T_{i} - T_{e})}{\tau_{e}} = 3 (\frac{9.11 \times 10^{-31}}{2 (1.67 \times 10^{-27})})10^{20}(\frac{((20,000 - 15,000)1.6\times 10^{-19})}{3.67\times 10^{-4}}) = 178kW m^{-3}$\\
+Example: Cross field ion heat conduction: Ion temp near edge in D+ plasma is 1.0Kev and temp grad there is -5 kev per m. Mag field is 4T.  What is ion heat conduction there?  $k_{\perp}^{i} = 2.0 \frac{nT_{i}\tau_{i}}{m_{i}(\omega_{ci}\tau_{i})^{2}}$.  $\tau_{i} = \frac{2.09\times 10^{7} \sqrt{m/m_{p}} T_{i}[eV]^{3/2} }{ln\triangle n_{i}[cm^{-3}]} = \frac{2.09\times 10^{7} \sqrt{2} (1000)^{3/2}}{16 \cdot 10^{14}} = 5.84\times 10^{-4} s$.  $\omega_{ci} = \frac{1.6\times 10^{-19} \cdot 4}{2 \cdot 1.67 \times 10^{-27}} = 1.916 \times 10^{8} s^{-1}$.  $\omega_{ci}\tau_{i} = 1.916\times 10^{8} \cdot 5.84 \times 10^{-4} = 1.12 \times 10^{5}$.  $k_{\perp}^{i} = 2.0\frac{10^{20}\cdot 1000 \times 1.6 \times 10^{-19} \cdot 5.84 \times 10^{-4}}{2 \times 1.67 \times 10^{-27} \cdot (1.12 \times 10^{5})^{2}} = 4.47\times 10^{17} m^{-1}s^{-1}$.  $\nabla T_{i} = 5 \cdot 1.6\times 10^{-16} = 8.0 \times 10^{-16} J m^{-1}$.  $(q_{i})_{\perp} = -k_{\perp}^{i} \nabla T_{i} = 4.47 \times 10^{17} \cdot 8.0 \times 10^{-16} = 357 W m^{-2}$
 
  
  Collisionality:\\
- $\nu_{*} = \frac{\nu / \epsilon}{\omega_{b}} = \frac{\nu / \epsilon^{3/2}}{\nu_{T}/ qR} >> 1$\\
+ $\nu_{*} = \frac{qR}{v_{th}\tau_{i}} = \frac{\nu / \epsilon}{\omega_{b}} = \frac{\nu / \epsilon^{3/2}}{\nu_{T}/ qR} >> 1$\\
  $\nu_{i}^{*} = \frac{qR}{\nu_{th}\tau_{i}}$
  If $\nu_{i}^{*} > 1$, Pfirsch-Schutler\\
  $1 > \nu_{i}^{*} > \epsilon^{3/2}$, Plateau\\
