@@ -1,11 +1,10 @@
-\documentclass{article}
+\documentclass[10pt]{extarticle}
 \usepackage[utf8]{inputenc}
 \usepackage[english]{babel}
 \usepackage{mathtools}
 \usepackage{graphicx}
 
 \usepackage{multicol}
- 
 \addtolength{\oddsidemargin}{-1.5in}
 \addtolength{\evensidemargin}{0in}
 \addtolength{\textwidth}{3in}
@@ -27,6 +26,12 @@ $eV = 1.6022\times 10 ^{-16} J$\\
 mass hydrogen $ = 1.00794u  $\\
 $1u = 1.66053 \times 10^{-27} kg $\\
 
+General Notes:\\
+$\nu_{i}^{*}$ is usually around $10^{5}$\\
+Sanity check: $v_{sound}<\nu_{i}^{*}<c$\\
+$\omega_{ci}\tau_{i} \approx 10^{6}$
+$n\omega$ in plasma formulary in cgs $(cm^{-3}s)$, and Temperatures in eV\\
+
 Tokamak Safety Factor:\\
 $q = \frac{r}{R}\frac{B_{t}}{B_{p}}$\\
 R =  major radius, r = minor radius\\
@@ -40,46 +45,75 @@ $<p> = \frac{B_{\theta}(a)^{2}}{2\mu_{0}}$\\
 
 Plasma Drifts:\\
 ExB Drift: $v_{drift} = \frac{\vec{E}\times\vec{B}}{B^{2}} = \frac{\vec{F}\times\vec{B}}{qB^{2}}$\\
-
-Rutherford island growth rate:\\
-$\frac{\tau_{R}}{r^{2}} \frac{d\omega}{dt} = \Delta ^{\prime}$\\
-$\tau_{R}$ is the local resistive time from Spitzer resistivity \\
-$r$ is the minor radius at q = m/n\\
-$\Delta ^{\prime}$ is the classical stability index defined as the logarithmic jump of the radial magnetic field perturbation across the rational surface
-
-$\Delta ^{\prime} > 0$ Unstable 
-$\Delta ^{\prime} < 0$ Stable  
-
-Neoclassical correction to Rutherford growth rate:
-$\frac{\tau_{R}}{r^{2}} \frac{d\omega}{dt} = \Delta ^{\prime} + \epsilon^{1/2}\frac{L_{q}}{L_{p}}\frac{\beta_{pol}}{\omega}$\\
-Example: Tokamak, $B_{\theta}$ = 5.2T, $A = 3$, $q(0.9a) = 3$, $50-50DT$, circular cross section, $q=2$ surface is located at $r = 0.5a$ and $\Delta^{\prime}$ is $-50.0 m^{-1}$ there.  Answer:  At threshold value for growth, $\frac{d\omega}{dt} = 0$, $\rightarrow$  $0 = \epsilon^{\frac{1}{2}} \frac{L_{q}}{L_{p}}\frac{\beta_{pol}}{\omega}$.  $\Delta^{\prime} = \epsilon^{\frac{1}{2}} \beta_{pol} \omega$, $\rightarrow$ $\epsilon =$ inverse aspect ratio, $\beta_{pol} = \frac{-\Delta^{\prime}\omega}{\epsilon^{\frac{1}{2}}} = \frac{(50)(0.01)}{(1/3)^{1/2}} = 0.86$
-
-
-Ara et al:\\
-$\gamma \tau_{A} = 0.55 (\frac{\tau_{A}}{\tau_{R}})^{3/5}(\Delta^{\prime}a)^{4/5}$\\
-with: $\tau_{A} = \frac{B_{\theta}}{\sqrt{\mu_{0}\rho}}\frac{1}{q}\frac{dq}{dr}$
- and $\tau_{R} = \frac{\mu_{0}a^{2}}{\eta}$\\
  
- xxxx:\\
+The stokes diagram:\\
+\includegraphics[width=3cm]{images/general_stokes.png}\\
+Candidate waves for parametric instabilities:\\
+1. Electromagnetic waves (photons):\\ $\omega^{2} = \omega_{pe}^{2} + k^{2}c^{2}$ \\
+2. Electron Langmuir waves (plasmons): \\$\omega^{2} = \omega^{2}_{pe} + 3k^{2}v_{th}^{2}$\\
+3. Ion sound waves (phonons): $\omega = \pm kc_{s}$\\
+\includegraphics[width=3cm]{images/stokes_general.png}
+\includegraphics[width=3cm]{images/SRS.png}
+\includegraphics[width=3cm]{images/SBS.png}
+\includegraphics[width=3cm]{images/Tpd.png}
+
+
+Raman and two-plasmon cases have $\omega_{2}$ and $\omega_{3} > \omega_{pe}$, so $\omega_{1}>2\omega_{pe}$.  Since $(\frac{\omega_{pe}}{\omega})^{2} = \frac{n}{n_{c}}$, where $n_{c}$ is critical density, locally $n < \frac{1}{4} n_{c}$ for these procees to occur.\\
+ 
+Use transport equations out of plasma formulary.\\
+Scaling laws for transport coefficients:  Note that for equal temps and Z=1,\\
+$\frac{\tau_{i}}{\tau_{e}} \approx \sqrt{2} (\frac{m_{i}}{m_{e}})^{1/2}$ 
+and so\\ 
+$\frac{k_{||}^{e}}{k_{||}^{i}} \approx (\frac{3.2}{3.9})(\frac{m_{i}}{m_{e}})^{1/2} \frac{1}{\sqrt{2}}$, however:\\
+$\frac{k_{\perp}^{e}}{k_{\perp}^{i}} \approx (\frac{4.7}{2})(\frac{m_{e}}{m_{i}})^{1/2} \frac{1}{\sqrt{2}}$ and the factors $\omega_{ci}\tau_{i}$ and $\omega_{ce}\tau_{e}$ are both very large.  Conclusions: Parallel transport coefficients are much greater than cross-field transport coefficients. Cross-field ion heat conduction dominates over cross-field electron heat conduction.  Parallel electron heat conduction dominates over parallel ion heat conduction.\\
+
+Add examples from Lecture 15 (around slide 15)?\\
+
+ 
+ Collisionality:\\
+ $\nu_{*} = \frac{\nu / \epsilon}{\omega_{b}} = \frac{\nu / \epsilon^{3/2}}{\nu_{T}/ qR} >> 1$\\
  $\nu_{i}^{*} = \frac{qR}{\nu_{th}\tau_{i}}$
  If $\nu_{i}^{*} > 1$, Pfirsch-Schutler\\
  $1 > \nu_{i}^{*} > \epsilon^{3/2}$, Plateau\\
  $\nu_{i}^{*} < \epsilon^{3/2}$.
  $\epsilon = \frac{r}{R_{0}}$\\ 
  
+Ware pinch: Effect in the banana regime where trapped particles move into the plasma core under the influence of a parallel electric field. Ware pinch velocity: $\Delta v = (v_{D})_{ware} \approx \frac{cE_{\zeta}}{B_{p}}$\\ 
+
+Rutherford island growth rate:\\
+$\frac{\tau_{R}}{r^{2}} \frac{d\omega}{dt} = \Delta ^{\prime}$,
+$\tau_{R}$ is the local resistive time from Spitzer resistivity,
+$r$ is the minor radius at q = m/n,
+$\Delta ^{\prime}$ is the classical stability index defined as the logarithmic jump of the radial magnetic field perturbation across the rational surface
+
+$\Delta ^{\prime} > 0$ Unstable,
+$\Delta ^{\prime} < 0$ Stable \\
+
+Neoclassical correction to Rutherford growth rate:
+$\frac{\tau_{R}}{r^{2}} \frac{d\omega}{dt} = \Delta ^{\prime} + \epsilon^{1/2}\frac{L_{q}}{L_{p}}\frac{\beta_{pol}}{\omega}$\\
+
+Example: Tokamak, $B_{\theta}$ = 5.2T, $A = 3$, $q(0.9a) = 3$, $50-50DT$, circular cross section, $q=2$ surface is located at $r = 0.5a$ and $\Delta^{\prime}$ is $-50.0 m^{-1}$ there.  Answer:  At threshold value for growth, $\frac{d\omega}{dt} = 0$, $\rightarrow$  $0 = \epsilon^{\frac{1}{2}} \frac{L_{q}}{L_{p}}\frac{\beta_{pol}}{\omega}$.  $\Delta^{\prime} = \epsilon^{\frac{1}{2}} \beta_{pol} \omega$, $\rightarrow$ $\epsilon =$ inverse aspect ratio, $\beta_{pol} = \frac{-\Delta^{\prime}\omega}{\epsilon^{\frac{1}{2}}} = \frac{(50)(0.01)}{(1/3)^{1/2}} = 0.86$\\
+
+Ara et al: (more accurate MHD gw)\\
+$\gamma \tau_{A} = 0.55 (\frac{\tau_{A}}{\tau_{R}})^{3/5}(\Delta^{\prime}a)^{4/5}$\\
+with: $\tau_{A} ^{-1}= \frac{B_{\theta}}{\sqrt{\mu_{0}\rho}}\frac{1}{q}\frac{dq}{dr}$
+ and $\tau_{R} = \frac{\mu_{0}a^{2}}{\eta}$\\
+ 
  Mid Term 2 practice:\\
  1.  The ITER device $(R=6.2m,a=2.0m,B_{\phi} = 5.3T,q(0)=1.0)$ is assumed to operate with 40 MW of external heating and 80 MW of alpha-particle heating. Assume that at r = 0.9a the safety factor q is 3.0 and that the ion temperature is 3.0 keV.  Assume that the density is $8\times 10^{19}$ at this point and that the plasma is Z = 1 with a 50-50 D-T mixture.  Assume that ten percent of the heat leaves through the ion channel, neglecting ohmic heating.  Assume that both heating sources mentioned above deposit all of the heat inside the r = 0.9a surface. 
  
  (a) At r = 0.9a, find $\tau_{i}$, $\omega_{ci}\tau_{i}$ and $k_{\perp}^{i}$.  Also find the neoclassical collisionality parameter, $\nu_{i}^{*}$:  $T_{i}(0.9a) = 3000eV$.  $n_{i}(0.9a) = 8.0\times 10^{19} m^{-3} = 8.0\times 10^{13} cm^{-3}$.  $n\tau_{i} = \frac{2.09\times 10^{7}(\frac{m_{i}}{m_{p}})^{1/2}T^{3/2}_{i}}{ln(\Lambda)} = 3.61\times 10^{11} cm^{-3} s$.  $\tau_{i} = 0.0045 s$.  $\omega_{ci} = \frac{qB}{m_{i}} = 2.03 \times 10^{8}s^{-1}$. $\omega_{ci}\tau_{i} = 9.19\times 10^{5}$.  $k_{\perp}^{i} = 2.0 \frac{nT_{i}\tau_{i}}{m_{i}(\omega_{ci}\tau_{i})^{2}} = 9.80 \times 10^{16} m^{-1}s^{-1}$.  $\nu_{i}^{*} = \frac{qR}{\nu_{th}\tau_{i}} = (3)(6.2)(\frac{T_{i}}{m_{i}})^{-\frac{1}{2}} / \tau_{i} = 0.0121$.  
  
- (b)  For this value of $\nu^{*}_{i}$, find the neoclassical collisionality regime (ie Pfirsch-Schluter, Plateau or Banana: Ions are banana.  
+ (b)  For this value of $\nu^{*}_{i}$, find the neoclassical collisionality regime (ie Pfirsch-Schluter, Plateau or Banana:
+$\nu = \frac{qR}{v_{th}\tau_{i}} = (3)(6.2)(T_{i}/m_{i})^{-1/2}/\tau_{i} = 0.0121$ so ions are Banana 
  
- (c) If the ion heat transport is neoclassical, find the value of $\nabla T_{i}$ at $r=0.9a$: $q^{''} = (40+80)\times 10^{6}/612 = 19,607.8 Watt m^{-2}$.  Neoclassical factor $ = Q_{neo} = 2q^{2}\epsilon^{3/2} = 109.545$.  Since $q^{''} = -Q_{neo}k_{\perp}\frac{dT(r)}{dr}$, we have $\frac{dT(r)}{dr} = 1.8 \times 10^{-15}Jm^{-1} = 11.35keVm^{-1}$.
+ 
+ (c) If the ion heat transport is neoclassical, find the value of $\nabla T_{i}$ at $r=0.9a$: $q^{''} = (40+80)\times 10^{6}/612 = 19,607.8 Watt m^{-2}$.  Neoclassical factor $ = Q_{neo} = 2q^{2}\epsilon^{-3/2} = 109.545$.  Since $q^{''} = -Q_{neo}k_{\perp}\frac{dT(r)}{dr}$, we have $\frac{dT(r)}{dr} = 1.8 \times 10^{-15}Jm^{-1} = 11.35keVm^{-1}$.
  
  (d) At the center of the device, the electron temperature is 25.0 keV and the ions are at 15.0 keV. The density there is $1.1\times10^{20}m^{-3}$. Find the electron-ion interspecies heating at $r=0$, in megawatts per cubic meter: $Q_{ie} = \frac{3m_{e}}{m_{i}}\frac{n(T_{i}-T_{e})}{\tau_{e}}$.  $\tau_{e} = 2.0\times 10^{10}T_{e}^{3/2}/n_{e}$ with $T_{e}$ in eV and MKS density.  Then $\tau_{e} = 718\mu s$ and $Q_{ie} = 160 kW m^{-3}$ 
  
  (e) Find the volumetric ohmic heating at $r=0$.  Give the answer in megawatts per cubic meter.  Hint: note that the toroidal current can be derived from q: $J_{\phi}(0) = \frac{2B_{\phi}(0)}{\mu_{0} q(0)R_{0}}$: $\eta = 2.8 \times 10^{-8}ZT_{e}^{-3/2} = 2.24\times 10^{-10} \Omega m$.  $J_{\phi}(0) = \frac{2B_{\phi}(0)}{\mu_{0}q(0)R_{0}} = 1.36\times 10^{6} A m^{-2}$.  $P_{\Omega} = 414.6W m^{-3}$\\
-2. A hohlraum design for NIF is made with depleted uranium ($M_{u} = 238m_{p}$).  The interior of the hohlraum is illuminated with frequency-tripled neodymium-glass laser light, $\lambda = 0.35\mu$. There are two laser entrance holes (LEHs), each with a 2.0mm diameter.  The total laser power is $4.0\times 10^{-9}s$. 
+2. A hohlraum design for NIF is made with depleted uranium ($M_{u} = 238m_{p}$).  The interior of the hohlraum is illuminated with frequency-tripled neodymium-glass laser light, $\lambda = 0.35\mu$. There are two laser entrance holes (LEHs), each with a 2.0mm diameter.  The total laser power is $4.0\times 10^{14} W$ with a duration of $4.0\times 10^{-9}s$. 
 
 (a). If the fraction of the power loss due to the blackbody radiation through the LEHs is thirty percent, find the photon temperature in the hohlraun: Radiation loss: $q^{''} = 0.3P_{laser} /A_{hole} = \frac{0.3\times4\times10^{14}}{(2(\frac{\pi d^{2}}{4	}))} = 1.91 \times 10^{15}Wcm^{-2}$. 
 $q^{''}_{BB} = \sigma T_{\gamma}^{4} = 1.03 \times 10^{5}T^{4} = 1.9\times 10^{15} W cm^{-2}$.  Then, $T_{\gamma} =  (\frac{1.9\times 10^{15}}{1.03\times 10^{5}})^{1/4}$, or $T_{\gamma} = 369 eV$
@@ -99,12 +133,6 @@ Here $\omega_{L} = \frac{2\pi c}{\lambda_{L}} = \frac{2\pi 3\times10^{8}}{0.35\t
 (e) Find the wavelength shift $\Delta \lambda$ for the backscattered electromagnetic wave by the following method: to first order, the wavenumber $k_{3} = 2k_{1}$.  Then find $\omega_{3} = k_{3}c_{s}$ and use this to obtain $\omega_{2} = \omega_{1} - \omega_{3}$. Then solve for the (free-space) wavelength shift using $\Delta \lambda / \lambda \approx - \Delta \omega / \omega = -\omega_{3} / \omega_{1}$.  Express your answer in angstroms. $(1\r{A} = 10^{-10}m)$
 For the incoming EM wave, $\omega_{L}^{2} = \omega_{pe}^{2} + k_{1}^{2}c^{2}$
 Noting that $\omega_{pe}^{2}/\omega^{2} = n/n_{c	}$ and $k_{0} = \omega/c$, this can be rewritten as $k_{1} = k_{0}\sqrt{1-n/n_{c}}$ and thus $k = \sqrt{1-0.8} \frac{2\pi c}{\lambda_{0}} = 8.03 \times 10^{6} m^{-1}$.  Then $\omega_{3} \approx 2k_{1}c_{s} = 3.056\times s^{-1}$.  Then $\Delta\omega / \omega_{L} = -5.675\times 10^{-4}$ and $\Delta\lambda = (3500)(5.675\times 10^{-4}) \r{A} = 1.98 \r{A}$
-
-General Notes:\\
-$\nu_{i}^{*}$ is usually around $10^{5}$\\
-Sanity check: $v_{sound}<\nu_{i}^{*}<c$\\
-$\omega_{ci}\tau_{i} \approx 10^{6}$
-$n\omega$ in plasma formulary in cgs $(cm^{-3}s)$, and Temperatures in eV\\
 
 \end{multicols}
  
